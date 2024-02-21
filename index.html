@@ -179,7 +179,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="./sublime/index.html">E-Commerce</a>
                 </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link active" href="./sublime/index.html">E-Commerce</a> -->
+                    <button type="button" class="btn btn-primary mx-5" id="liveToastBtn" style="position: absolute; right: 0;">Review Page</button>
+                </li>
             </ul>
+
         
         <!-- <form class="d-flex pl-2" role="search" >
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -294,6 +299,45 @@
           </div>
           
 
+
+
+          <!-- <button type="button" class="btn btn-primary m-5" id="liveToastBtn">Review Page</button> -->
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" >
+    <div class="toast-header">
+      <img src="./img/favicon-new.png" width="20px" class="rounded me-2" alt="...">
+      <strong class="me-auto">Review Page</strong>
+      <!-- <small>11 mins ago</small> -->
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      <!-- Hello, world! This is a toast message. -->
+
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <!-- <div id="emailHelp" class="form-text">Email Address</div> -->
+      </div>
+      <!-- <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div> -->
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+      </div>
+      <!-- <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div> -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  </div>
+</div>
+
             
 
     </main>
@@ -303,10 +347,11 @@
     <!-- <footer > -->
     <footer class="fixed-bottom">
         <hr>
-        <div class="d-flex justify-content-around">
-            <p>Developer: Shubham Bohra</p>
-            <p> Tatvic Analytics &copy; 2024</p>
-            <p>
+        <div class="d-flex justify-content-between">
+        <!-- <div class="d-flex justify-content-around"> -->
+            <p class="mx-5">Created By Shubham Bohra | Tatvic Analytics &copy; 2024</p>
+            <!-- <p> Tatvic Analytics &copy; 2024</p> -->
+            <p class="mx-5">
                 <a href="https://www.linkedin.com/in/shubham-bohra-17ba94201/" style="text-decoration: none;" target="_blank">
 
                     <img  src="./img/linkedin (1).png" width="25px" height="25px" class="mx-2"  alt="">
@@ -347,6 +392,24 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
+    <script>
+      const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
+
+if (toastTrigger) {
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+  toastTrigger.addEventListener('click', () => {
+    toastBootstrap.show()
+  })
+}
+
+setTimeout(() => {
+  toastTrigger.click()
+  
+}, 700);
+// $(document).ready(function(){
+//     $('#liveToast').toast('show');
+//   });
+    </script>
 </body>
 </html>
